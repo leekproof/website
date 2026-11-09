@@ -337,9 +337,9 @@
 	<nav class="socials" aria-label="Social links">
 		<a href="https://github.com/leekproof" target="_blank" rel="noreferrer">github</a>
 		<a href="https://www.youtube.com/@leekproof" target="_blank" rel="noreferrer">yt</a>
-		<a href="https://www.instagram.com/m4n1k.sh/" target="_blank" rel="noreferrer">ig</a>
+		<a href="https://www.instagram.com/leek.proof/" target="_blank" rel="noreferrer">ig</a>
 		<a href="mailto:headhoncho@maniksharma.xyz">email</a>
-		<a href="https://www.linkedin.com/in/manik-sharma-30b4a9419/" target="_blank" rel="noreferrer"
+		<a href="https://www.linkedin.com/in/codewizardmanik/" target="_blank" rel="noreferrer"
 			>linkedin</a
 		>
 		<a href="https://vncl.xyz" target="_blank" rel="noreferrer">""company"" website</a>
