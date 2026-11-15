@@ -437,41 +437,39 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 		width: 240px;
-		height: 270px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		text-align: center;
 		z-index: 3;
 	}
 
 	.hi {
 		position: absolute;
 		left: 8px;
-		top: 0;
+		top: -28px;
 		font-size: 23px;
 	}
 
-	.identity img {
-		width: 100%;
-		height: auto;
-		flex-shrink: 0;
+	h1 {
+		margin: 0;
+		color: var(--green);
+		font-family: 'Instrument Serif', serif;
+		font-size: clamp(72px, 7vw, 100px);
+		font-weight: 400;
+		line-height: 0.95;
+		letter-spacing: -2px;
+		transition:
+			letter-spacing 0.3s ease,
+			text-shadow 0.3s ease;
+		cursor: default;
 	}
 
 	.quote {
-		width: 100%;
-		height: 100px;
-		min-height: 100px;
-		max-height: 100px;
+		height: 35px;
 		margin-top: 12px;
-		overflow-y: auto;
-		overflow-x: hidden;
-		overflow-wrap: anywhere;
-		white-space: normal;
+		overflow: hidden;
 		color: var(--pink);
 		font-family: 'Instrument Serif', serif;
 		font-size: 25px;
-		line-height: 1.15;
+		white-space: nowrap;
 	}
 
 	.quote span {
@@ -818,13 +816,12 @@
 		}
 
 		.identity {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			width: min(500px, 75vw);
-			text-align: center;
-			z-index: 3;
+			position: relative;
+			left: auto;
+			top: auto;
+			transform: none;
+			width: 100%;
+			margin: 35px 0 12px;
 		}
 
 		h1 {
