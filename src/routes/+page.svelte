@@ -167,6 +167,14 @@
 	onMount(() => {
 		let frame = 0;
 
+		const links = [about, projects, blog, sillies];
+
+		links.forEach((link) => {
+			const direction = Math.random() < 0.5 ? -1 : 1;
+			const angle = 2 + Math.random() * 3;
+			link.style.setProperty('--rotation', `${direction * angle}deg`);
+		});
+
 		const interval = setInterval(() => {
 			let index: number;
 
@@ -252,7 +260,8 @@
 		href="/about"
 		data-cursor="i do a lot of random stuff. im (currently) a 14 year old student."
 	>
-		/about
+		<span class="normal-font">/about</span>
+		<span class="hover-font">/about</span>
 	</a>
 
 	<a
@@ -261,7 +270,8 @@
 		href="/projects"
 		data-cursor="PROJECTS (all oss)"
 	>
-		/projects
+		<span class="normal-font">/projects</span>
+		<span class="hover-font">/projects</span>
 	</a>
 
 	<a
@@ -270,7 +280,8 @@
 		href="/blog"
 		data-cursor="BLOG (and alotta writing for funsies <3)"
 	>
-		/blog
+		<span class="normal-font">/blog</span>
+		<span class="hover-font">/blog</span>
 	</a>
 
 	<a
@@ -279,7 +290,8 @@
 		href="/webrings"
 		data-cursor=":3 (webrings and moar)"
 	>
-		sillies
+		<span class="normal-font">sillies</span>
+		<span class="hover-font">sillies</span>
 	</a>
 
 	<div class="song-orbit">
@@ -475,11 +487,14 @@
 	}
 
 	.orbit-link {
+		--rotation: -3deg;
+
 		position: absolute;
 		z-index: 4;
-		display: inline-flex;
+		display: inline-grid;
+		grid-template: 1fr / 1fr;
 		align-items: center;
-		justify-content: center;
+		justify-items: center;
 		padding: 13px 15px;
 		border: 2.5px solid var(--pink);
 		border-radius: 29px;
@@ -488,18 +503,49 @@
 		font-size: clamp(22px, 2.1vw, 34px);
 		text-decoration: underline;
 		text-underline-offset: 4px;
+
 		transition:
-			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
-			background 0.3s ease,
+			transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+			background-color 0.25s ease,
+			color 0.25s ease,
 			box-shadow 0.3s ease,
 			border-radius 0.3s ease;
 	}
 
+	.orbit-link span {
+		grid-area: 1 / 1;
+		white-space: nowrap;
+		transition: opacity 0.22s ease;
+	}
+
+	.normal-font {
+		font-family: 'Funnel Display', sans-serif;
+		opacity: 1;
+	}
+
+	.hover-font {
+		font-family: 'Instrument Serif', serif;
+		opacity: 0;
+	}
+
 	.orbit-link:hover {
-		transform: scale(1.09) rotate(-3deg);
-		background: #080008;
-		box-shadow: 0 0 24px #ff69b41c;
+		transform: scale(1.09) rotate(var(--rotation));
+		background: var(--pink);
+		color: #000;
+		box-shadow: 0 0 24px #ff69b433;
 		border-radius: 19px;
+	}
+
+	.orbit-link:hover .normal-font {
+		opacity: 0;
+	}
+
+	.orbit-link:hover .hover-font {
+		opacity: 1;
+	}
+
+	.orbit-link:active {
+		transform: scale(0.96) rotate(0deg);
 	}
 
 	.about {
@@ -793,6 +839,11 @@
 	@media (prefers-reduced-motion: reduce) {
 		.song-orbit {
 			animation: none;
+		}
+
+		.orbit-link,
+		.orbit-link span {
+			transition: none;
 		}
 	}
 
