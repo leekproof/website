@@ -464,13 +464,17 @@
 	}
 
 	.quote {
-		height: 35px;
+		min-height: 35px;
+		height: auto;
+		max-height: 180px;
 		margin-top: 12px;
-		overflow: hidden;
+		overflow: visible;
+		overflow-wrap: anywhere;
+		white-space: normal;
 		color: var(--pink);
 		font-family: 'Instrument Serif', serif;
 		font-size: 25px;
-		white-space: nowrap;
+		line-height: 1.15;
 	}
 
 	.quote span {
@@ -817,12 +821,13 @@
 		}
 
 		.identity {
-			position: relative;
-			left: auto;
-			top: auto;
-			transform: none;
-			width: 100%;
-			margin: 35px 0 12px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: min(500px, 75vw);
+			text-align: center;
+			z-index: 3;
 		}
 
 		h1 {
