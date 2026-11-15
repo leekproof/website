@@ -12,7 +12,6 @@
 		'this is a quote',
 		'this is another quote',
 		'i give up',
-		'this is a quote that is way too long and will probably break the layout but i dont care (not the longest one)',
 		'2+2 = 5',
 		'uhm, did you know i use FEDORA LINUX? ☝️🤓',
 		"i'd like to interject for a moment. What you're refering to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.",
@@ -438,37 +437,35 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 		width: 240px;
-		text-align: center;
+		height: 270px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		z-index: 3;
 	}
 
 	.hi {
 		position: absolute;
 		left: 8px;
-		top: -28px;
+		top: 0;
 		font-size: 23px;
 	}
 
-	h1 {
-		margin: 0;
-		color: var(--green);
-		font-family: 'Instrument Serif', serif;
-		font-size: clamp(72px, 7vw, 100px);
-		font-weight: 400;
-		line-height: 0.95;
-		letter-spacing: -2px;
-		transition:
-			letter-spacing 0.3s ease,
-			text-shadow 0.3s ease;
-		cursor: default;
+	.identity img {
+		width: 100%;
+		height: auto;
+		flex-shrink: 0;
 	}
 
 	.quote {
-		min-height: 35px;
-		height: auto;
-		max-height: 180px;
+		width: 100%;
+		height: 100px;
+		min-height: 100px;
+		max-height: 100px;
 		margin-top: 12px;
-		overflow: visible;
+		overflow-y: auto;
+		overflow-x: hidden;
 		overflow-wrap: anywhere;
 		white-space: normal;
 		color: var(--pink);
