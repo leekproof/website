@@ -13,10 +13,8 @@
 		'this is another quote',
 		'i give up',
 		'2+2 = 5',
-		'uhm, did you know i use FEDORA LINUX? ☝️🤓',
-		"i'd like to interject for a moment. What you're refering to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.",
-		'was that last one too long?',
-		'i dont know how to code help me'
+		'FEDORA LINUX user ☝️🤓',
+		'i dont know how to code help'
 	];
 
 	let quote = $state(quotes[0]);
@@ -436,7 +434,7 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		width: 240px;
+		width: 250px;
 		text-align: center;
 		z-index: 3;
 	}
@@ -800,106 +798,108 @@
 
 	@media (max-width: 700px) {
 		.home {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0;
+			width: 100%;
 			height: auto;
 			min-height: 100svh;
 			overflow-x: hidden;
 			overflow-y: auto;
-			padding: 35px 20px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 25px;
+			padding: 55px 22px 35px;
 		}
 
-		.ropes {
+		.ropes,
+		.quote,
+		.song-orbit,
+		.message-box,
+		.club-info {
 			display: none;
 		}
 
 		.identity {
 			position: relative;
-			left: auto;
 			top: auto;
+			left: auto;
 			transform: none;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			width: 100%;
-			margin: 35px 0 12px;
-		}
-
-		h1 {
-			font-size: 100px;
+			margin: 0 0 30px;
 		}
 
 		.hi {
-			left: calc(50% - 90px);
+			position: static;
+			margin-bottom: 5px;
+			font-size: 23px;
+		}
+
+		.identity img {
+			display: block;
+			width: min(340px, 85vw);
+			height: auto;
+			object-fit: contain;
 		}
 
 		.orbit-link {
 			position: relative;
-			left: auto;
 			top: auto;
-			font-size: 25px;
+			left: auto;
+			display: block;
+			width: fit-content;
+			margin: 0 auto 12px;
+			padding: 4px 8px;
+			border: none;
+			border-radius: 0;
+			background: transparent;
+			font-size: 29px;
+			text-decoration: none;
+			text-underline-offset: 7px;
+		}
+
+		.orbit-link:hover {
+			transform: translateY(-2px);
+			background: transparent;
+			border-radius: 0;
+			box-shadow: none;
 		}
 
 		.about,
-		.blog {
-			align-self: flex-start;
-		}
 		.projects,
+		.blog,
 		.sillies {
-			align-self: flex-end;
-		}
-
-		.song-orbit {
-			position: relative;
-			left: auto;
-			top: auto;
-			align-self: flex-start;
-			animation: none;
-		}
-
-		.song-card {
-			max-width: 100%;
-		}
-
-		.song-cover {
-			flex-basis: 56px;
-			width: 56px;
-			height: 56px;
-		}
-
-		.message-box {
-			position: relative;
-			top: auto;
-			right: auto;
-			width: min(280px, 100%);
-			height: 280px;
-			align-self: flex-end;
-		}
-
-		.club-info {
-			position: relative;
-			right: auto;
-			bottom: auto;
-			max-width: 100%;
-			text-align: center;
-			font-size: 13px;
+			align-self: center;
+			margin-top: -20px;
+			text-decoration: underline;
+			text-decoration-color: var(--pink);
+			text-decoration-thickness: 3px;
+			margin-bottom: 20px;
 		}
 
 		.socials {
 			position: relative;
 			right: auto;
 			bottom: auto;
-			max-width: 100%;
+			display: flex;
 			justify-content: center;
-			font-size: 14px;
-			color: #a3a3a3 !important;
+			flex-wrap: wrap;
+			gap: 8px 16px;
+			max-width: 100%;
+			margin-top: 25px;
+			font-size: 15px;
+			text-align: center;
 		}
 
 		.all-links {
 			position: relative;
 			right: auto;
 			bottom: auto;
+			width: 100%;
+			margin-top: 22px;
 			text-align: center;
-			font-size: 12px;
+			font-size: 13px;
 			overflow-wrap: anywhere;
 		}
 	}
