@@ -212,7 +212,7 @@
 </script>
 
 <svelte:head>
-	<title>this is the website of {quote.replace(/^aka\s+/, '')}</title>
+	<title>this is the website of {quote.replace(/^aka\s+/, '')} (manik sharma)</title>
 	<meta name="theme-color" content="#000000" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
