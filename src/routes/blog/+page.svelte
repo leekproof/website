@@ -69,6 +69,12 @@
 				class="text-[#16e16e] hover:underline transition-colors"
 				data-cursor="a fun lil poem (be happy :D)">keep the kid alive :D</a
 			>
+			<a
+				href="/posts/belight.png"
+				class="text-[#16e16e] hover:underline transition-colors"
+				data-cursor="also on my instagram. a fun lil comic strip. maybe ill make it a movie one day."
+				>be the light in someone else's darkness.</a
+			>
 		</div>
 		<p class="text-xs text-gray-400 pt-2">btw these may/may not remain .txt files</p>
 	</div>
